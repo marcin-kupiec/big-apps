@@ -10,7 +10,7 @@ terraform {
 
   backend "s3" {
     region = "eu-central-1"
-    key    = "state"
+    key    = "state-ecs"
     bucket = "big-apps-tfm"
     //    dynamodb_table = "terraform-locks"
   }

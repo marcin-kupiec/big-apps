@@ -1,0 +1,16 @@
+[
+  {
+    "name": "front-1",
+    "essential": true,
+    "memory": 256,
+    "cpu": 2,
+    "image": "hub.docker.com/repository/docker/mkupiec/big-platform/front-1",
+    "environment": [],
+    "portMappings": [
+      {
+        "containerPort": 3000,
+        "hostPort": 3000
+      }
+    ]
+  }
+]

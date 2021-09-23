@@ -8,11 +8,11 @@ resource "aws_alb" "front_end" {
   security_groups = [aws_security_group.public_http.id]
   subnets         = data.aws_subnet_ids.public.ids
 
-  access_logs {
-    bucket  = aws_s3_bucket.logs.bucket
-    prefix  = "alb-front/"
-    enabled = true
-  }
+  #  access_logs {
+  #    bucket  = aws_s3_bucket.logs.bucket
+  #    prefix  = "alb-front"
+  #    enabled = true
+  #  }
 
   tags = {
     Environment = "nonprod"
@@ -32,7 +32,7 @@ resource "aws_alb_target_group" "front_end" {
   }
 }
 
-resource "aws_lb_listener" "alb_front_end_listener" {
+resource "aws_alb_listener" "alb_front_end_listener" {
   load_balancer_arn = aws_alb.front_end.arn
   port              = 80
   protocol          = "HTTP"
